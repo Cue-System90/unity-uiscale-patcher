@@ -1,0 +1,17 @@
+# Python
+venv/
+__pycache__/
+*.pyc
+
+# .NET
+plugin/**/bin/
+plugin/**/obj/
+out/
+
+# Niemals Spieldaten einchecken
+*.dll
+*.assets
+*.resS
+*.unity3d
+*.orig
+*.tmp

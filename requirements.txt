@@ -1,0 +1,3 @@
+dnfile>=0.15
+dncil>=1.0
+UnityPy>=1.20
