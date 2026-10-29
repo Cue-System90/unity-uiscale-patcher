@@ -18,7 +18,7 @@ import os
 import sys
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from uiscale import __version__, assetpatch, backup, ilpatch, plugin  # noqa: E402
+from uiscale import __version__, argparse_de, assetpatch, backup, ilpatch, plugin  # noqa: E402
 from uiscale.game import GameInfo, find_game  # noqa: E402
 
 
@@ -161,9 +161,10 @@ def cmd_restore(args) -> None:
 
 
 def main() -> None:
+    argparse_de.install()
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--version", action="version", version=f"uiscale {__version__}")
-    sub = ap.add_subparsers(dest="cmd", required=True)
+    sub = ap.add_subparsers(dest="cmd", required=True, title="Befehle", metavar="BEFEHL")
 
     d = sub.add_parser("detect", help="Spiel analysieren und Weg empfehlen")
     d.add_argument("game_dir")

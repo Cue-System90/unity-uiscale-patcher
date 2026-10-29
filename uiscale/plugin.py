@@ -94,17 +94,18 @@ def config_text(factor: float, existing: str | None = None) -> str:
             return re.sub(r"^Multiplier\s*=.*$", f"Multiplier = {factor:g}", existing, count=1, flags=re.M)
         return existing.rstrip("\n") + f"\n\n[General]\nMultiplier = {factor:g}\n"
     return (
-        f"## Settings file was created by plugin UI Scale Multiplier\n"
-        f"## Plugin GUID: {PLUGIN_GUID}\n\n"
+        f"## Einstellungen des Plugins UI-Skalierung (UIScaleMultiplier)\n"
+        f"## Plugin-GUID: {PLUGIN_GUID}\n"
+        "## BepInEx schreibt diese Datei beim Speichern im eigenen Format neu; die Werte bleiben erhalten.\n\n"
         "[General]\n\n"
         "## Faktor, mit dem jede uGUI-Skalierung multipliziert wird.\n"
-        "# Setting type: Single\n# Default value: 1.5\n"
+        "# Typ: Zahl, Standard: 1.5\n"
         f"Multiplier = {factor:g}\n\n"
         "## Canvas-Namen, die nicht skaliert werden (kommagetrennt).\n"
-        "# Setting type: String\n# Default value: \n"
+        "# Typ: Text, Standard: leer\n"
         "Exclude = \n\n"
         "## World-Space-Canvases unverändert lassen.\n"
-        "# Setting type: Boolean\n# Default value: true\n"
+        "# Typ: Wahrheitswert, Standard: true\n"
         "SkipWorldSpace = true\n"
     )
 

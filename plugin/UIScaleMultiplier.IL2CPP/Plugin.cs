@@ -9,7 +9,7 @@ namespace UIScaleMultiplier
     public class Plugin : BasePlugin
     {
         public const string Guid = "de.cuesystem.uiscale";
-        public const string Name = "UI Scale Multiplier";
+        public const string Name = "UI-Skalierung";
         public const string Version = "1.0.0";
 
         private ConfigEntry<float> _multiplier;
